@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#f9b700">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <title>Para Mary 🌻💛 | Flores Amarillas</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            color-scheme: light;
+            --bg1: #fff9d8;
+            --bg2: #ffeaa7;
+            --bg3: #fff4bf;
+            --bg4: #ffd95a;
+            --ink: #6b4300;
+            --ink-soft: #674500;
+            --ink-strong: #8a5500;
+            --accent: #d89400;
+            --accent-2: #f4bd00;
+            --card-bg: rgba(255,255,255,.42);
+            --card-border: rgba(255,255,255,.75);
+            --letter-bg1: rgba(255,255,255,.62);
+            --letter-bg2: rgba(255,250,220,.65);
+            --intro-bg: radial-gradient(circle at center, #fff9c4, #ffd54f, #f4a900);
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: env(safe-area-inset-top, 0px);
+            height: 100%;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg1: #3a2b00;
+                --bg2: #4d3800;
+                --bg3: #5c4300;
+                --bg4: #6e5200;
+                --ink: #ffe9a8;
+                --ink-soft: #ffdd8a;
+                --ink-strong: #ffd25e;
+                --accent: #ffcf4d;
+                --accent-2: #ffdd6b;
+                --card-bg: rgba(60, 44, 0, .45);
+                --card-border: rgba(255, 220, 130, .25);
+                --letter-bg1: rgba(60, 44, 0, .55);
+                --letter-bg2: rgba(80, 58, 0, .55);
+                --intro-bg: radial-gradient(circle at center, #4d3800, #6e5200, #2d2000);
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg1: #3a2b00;
+            --bg2: #4d3800;
+            --bg3: #5c4300;
+            --bg4: #6e5200;
+            --ink: #ffe9a8;
+            --ink-soft: #ffdd8a;
+            --ink-strong: #ffd25e;
+            --accent: #ffcf4d;
+            --accent-2: #ffdd6b;
+            --card-bg: rgba(60, 44, 0, .45);
+            --card-border: rgba(255, 220, 130, .25);
+            --letter-bg1: rgba(60, 44, 0, .55);
+            --letter-bg2: rgba(80, 58, 0, .55);
+            --intro-bg: radial-gradient(circle at center, #4d3800, #6e5200, #2d2000);
+        }
+
+        body {
+            font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+            min-height: 100%;
+            overflow-x: hidden;
+            background: var(--bg1);
+            color: var(--ink);
+            cursor: default;
+        }
+
+        /* ================================
+           BARRA DE PROGRESO
+        ================================= */
+
+        #progress-bar {
+            position: fixed;
+            top: env(safe-area-inset-top, 0px);
+            left: 0;
+            height: 4px;
+            width: 0%;
+            background: linear-gradient(90deg, #ffca28, #ff8f00, #ffd54f);
+            background-size: 200% 100%;
+            animation: progressShimmer 3s linear infinite;
+            z-index: 3000;
+            box-shadow: 0 0 12px rgba(255, 193, 7, .7);
+            transition: width .12s ease-out;
+        }
+
+        @keyframes progressShimmer {
+            0% { background-position: 0% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* ================================
+           FONDO ANIMADO
+        ================================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            z-index: -10;
+            background:
+                linear-gradient(
+                    120deg,
+                    var(--bg1),
+                    var(--bg2),
+                    var(--bg4),
+                    var(--bg3),
+                    var(--bg2)
+                );
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .stars {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(2px 2px at 10% 20%, rgba(255,255,255,.9), transparent),
+                radial-gradient(1.5px 1.5px at 30% 60%, rgba(255,255,255,.8), transparent),
+                radial-gradient(2px 2px at 60% 15%, rgba(255,255,255,.7), transparent),
+                radial-gradient(1.5px 1.5px at 80% 45%, rgba(255,255,255,.9), transparent),
+                radial-gradient(1.5px 1.5px at 45% 80%, rgba(255,255,255,.7), transparent),
+                radial-gradient(2px 2px at 90% 75%, rgba(255,255,255,.8), transparent);
+            background-repeat: repeat;
+            background-size: 220px 220px;
+            opacity: .5;
+            animation: starsTwinkle 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes starsTwinkle {
+            0% { opacity: .25; }
+            100% { opacity: .6; }
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(6px);
+            opacity: .45;
+            animation: orbFloat 8s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .orb:nth-child(2) {
+            width: 220px;
+            height: 220px;
+            background: #ffd000;
+            left: -80px;
+            top: 10%;
+        }
+
+        .orb:nth-child(3) {
+            width: 280px;
+            height: 280px;
+            background: #fff176;
+            right: -100px;
+            top: 30%;
+            animation-delay: 2s;
+        }
+
+        .orb:nth-child(4) {
+            width: 180px;
+            height: 180px;
+            background: #ffb300;
+            left: 40%;
+            bottom: -80px;
+            animation-delay: 4s;
+        }
+
+        .orb:nth-child(5) {
+            width: 150px;
+            height: 150px;
+            background: #fff59d;
+            right: 15%;
+            bottom: 5%;
+            animation-delay: 1s;
+            animation-duration: 10s;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(30px, -40px) scale(1.15) rotate(20deg); }
+        }
+
+        /* ================================
+           CURSOR / CLICK EFFECTS
+        ================================= */
+
+        .cursor-glow {
+            position: fixed;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 213, 79, .55), transparent 70%);
+            pointer-events: none;
+            z-index: 4000;
+            transform: translate(-50%, -50%);
+            transition: opacity .3s ease;
+            mix-blend-mode: multiply;
+        }
+
+        /* ================================
+           PANTALLA DE INICIO
+        ================================= */
+
+        #intro {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            background: var(--intro-bg);
+            transition: opacity 1s ease, visibility 1s ease;
+        }
+
+        #intro.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .intro-card {
+            width: min(520px, 95%);
+            padding: 45px 30px;
+            text-align: center;
+            border-radius: 35px;
+            background: rgba(255, 255, 255, .35);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 2px solid rgba(255, 255, 255, .7);
+            box-shadow:
+                0 30px 80px rgba(115, 71, 0, .3),
+                inset 0 0 30px rgba(255,255,255,.4);
+            animation: introCard 1.5s ease;
+            position: relative;
+        }
+
+        @keyframes introCard {
+            from { transform: scale(.5) translateY(50px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        .intro-ring {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 130px;
+            height: 130px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            border: 2px solid rgba(255, 200, 0, .5);
+            animation: ringPulse 2.4s ease-out infinite;
+        }
+
+        .intro-ring:nth-child(2) { animation-delay: .8s; }
+        .intro-ring:nth-child(3) { animation-delay: 1.6s; }
+
+        @keyframes ringPulse {
+            0% { transform: translateX(-50%) scale(.6); opacity: .8; }
+            100% { transform: translateX(-50%) scale(1.8); opacity: 0; }
+        }
+
+        .intro-flower {
+            font-size: 90px;
+            animation:
+                flowerPulse 2s ease-in-out infinite,
+                flowerRotate 6s ease-in-out infinite;
+            display: block;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes flowerPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        @keyframes flowerRotate {
+            0%, 100% { rotate: -5deg; }
+            50% { rotate: 5deg; }
+        }
+
+        .intro-card h1 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2rem, 7vw, 3.6rem);
+            color: #8a5500;
+            text-shadow: 0 3px 15px rgba(255,255,255,.9);
+            margin-bottom: 12px;
+        }
+
+        .intro-card p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #704500;
+            margin-bottom: 28px;
+        }
+
+        .enter-btn {
+            border: none;
+            padding: 16px 35px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ffca28, #f59e0b);
+            background-size: 200% 200%;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow:
+                0 10px 30px rgba(245,158,11,.4),
+                0 0 0 0 rgba(255,193,7,.6);
+            animation: buttonGlow 2s infinite, buttonGradient 4s ease infinite;
+            transition: transform .3s ease, box-shadow .3s ease;
+        }
+
+        .enter-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        .enter-btn:active {
+            transform: translateY(-1px) scale(.98);
+        }
+
+        @keyframes buttonGlow {
+            0% { box-shadow: 0 10px 30px rgba(245,158,11,.4), 0 0 0 0 rgba(255,193,7,.6); }
+            70% { box-shadow: 0 10px 30px rgba(245,158,11,.4), 0 0 0 18px rgba(255,193,7,0); }
+            100% { box-shadow: 0 10px 30px rgba(245,158,11,.4), 0 0 0 0 rgba(255,193,7,0); }
+        }
+
+        @keyframes buttonGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* ================================
+           PÉTALOS / CORAZONES / DESTELLOS
+        ================================= */
+
+        #petals, #hearts, #sparkles, #confetti {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 20;
+        }
+
+        .petal {
+            position: absolute;
+            top: -50px;
+            font-size: 25px;
+            animation: falling linear forwards;
+            filter: drop-shadow(0 3px 5px rgba(110,70,0,.15));
+        }
+
+        @keyframes falling {
+            0% { transform: translateY(-50px) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            50% { transform: translateY(50vh) translateX(var(--drift, 80px)) rotate(180deg); }
+            100% { transform: translateY(110vh) translateX(calc(var(--drift, 80px) * -1)) rotate(360deg); opacity: 0; }
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 20px;
+            animation: heartUp linear forwards;
+        }
+
+        @keyframes heartUp {
+            0% { transform: translateY(0) scale(.5); opacity: 0; }
+            15% { opacity: 1; }
+            100% { transform: translateY(-110vh) translateX(var(--move)) rotate(25deg) scale(1.5); opacity: 0; }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 0 12px #fff;
+            animation: sparkleAnimation 2s ease-in-out infinite;
+        }
+
+        @keyframes sparkleAnimation {
+            0%, 100% { opacity: 0; transform: scale(.3); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        .confetti-piece {
+            position: absolute;
+            top: -30px;
+            font-size: 22px;
+            animation: confettiFall 3.2s ease-in forwards;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) translateX(var(--cx, 0px)) rotate(540deg); opacity: 0; }
+        }
+
+        /* ================================
+           HERO
+        ================================= */
+
+        main {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            width: 100%;
+            animation: heroAppear 2s ease;
+        }
+
+        @keyframes heroAppear {
+            from { opacity: 0; transform: translateY(60px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .small-text {
+            font-size: 1.1rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #9a6500;
+            margin-bottom: 15px;
+            opacity: 0;
+            animation: fadeIn 2s ease 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-weight: 700;
+            font-size: clamp(3.5rem, 12vw, 8rem);
+            line-height: .95;
+            background: linear-gradient(100deg, #d89400, #ffcf3f, #d89400, #ffb300);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 8px 30px rgba(150,90,0,.25));
+            animation: titleFloat 4s ease-in-out infinite, titleShine 6s linear infinite;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes titleShine {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+
+        .hero h2 {
+            margin-top: 25px;
+            font-size: clamp(1.5rem, 5vw, 2.7rem);
+            color: var(--ink-soft);
+            font-weight: 500;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin: 25px auto;
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            line-height: 1.9;
+            color: var(--ink-soft);
+            min-height: 3em;
+        }
+
+        .typed-cursor {
+            display: inline-block;
+            width: 2px;
+            background: var(--accent);
+            margin-left: 2px;
+            animation: caretBlink .9s steps(1) infinite;
+        }
+
+        @keyframes caretBlink {
+            50% { opacity: 0; }
+        }
+
+        .scroll-down {
+            margin-top: 40px;
+            font-size: 2rem;
+            animation: scrollBounce 1.5s infinite;
+        }
+
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(15px); }
+        }
+
+        /* ================================
+           FLORES DECORATIVAS
+        ================================= */
+
+        .flower-field {
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            gap: 25px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            overflow: hidden;
+            will-change: transform;
+        }
+
+        .big-flower {
+            font-size: 65px;
+            animation: flowerSway 3s ease-in-out infinite;
+            transform-origin: bottom center;
+        }
+
+        .big-flower:nth-child(2) { font-size: 90px; animation-delay: .4s; }
+        .big-flower:nth-child(3) { animation-delay: .8s; }
+        .big-flower:nth-child(4) { font-size: 80px; animation-delay: 1.2s; }
+        .big-flower:nth-child(5) { animation-delay: 1.6s; }
+
+        @keyframes flowerSway {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(7deg) translateY(-8px); }
+        }
+
+        /* ================================
+           SECCIONES
+        ================================= */
+
+        section {
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: #9b6200;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            display: block;
+            font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+            font-size: .95rem;
+            font-weight: normal;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #b17b13;
+            margin-bottom: 12px;
+        }
+
+        /* ================================
+           CARTAS
+        ================================= */
+
+        .cards {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            perspective: 1000px;
+        }
+
+        .card {
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 28px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 20px 50px rgba(110,70,0,.12);
+            transition: transform .25s ease, box-shadow .25s ease;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255,213,79,.3);
+            top: -50px;
+            right: -50px;
+        }
+
+        .card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.55) 50%, transparent 70%);
+            background-size: 250% 250%;
+            background-position: -120% -120%;
+            transition: background-position .8s ease;
+            pointer-events: none;
+        }
+
+        .card:hover {
+            box-shadow: 0 30px 60px rgba(110,70,0,.2);
+        }
+
+        .card:hover::after {
+            background-position: 120% 120%;
+        }
+
+        .card-icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+            display: block;
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.12) rotate(5deg); }
+        }
+
+        .card h3 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: 1.5rem;
+            color: #8b5900;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            line-height: 1.8;
+            color: var(--ink-soft);
+        }
+
+        /* ================================
+           CARTA PRINCIPAL
+        ================================= */
+
+        .love-section {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .letter {
+            max-width: 850px;
+            padding: 55px 45px;
+            border-radius: 35px;
+            background: linear-gradient(var(--letter-bg1), var(--letter-bg2));
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 2px solid var(--card-border);
+            box-shadow:
+                0 30px 80px rgba(100,60,0,.18),
+                inset 0 0 30px rgba(255,255,255,.5);
+            text-align: center;
+            position: relative;
+        }
+
+        .letter::before {
+            content: "🌻";
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 65px;
+            filter: drop-shadow(0 8px 10px rgba(100,60,0,.2));
+            animation: flowerPulse 2.5s ease-in-out infinite;
+        }
+
+        .letter h2 {
+            font-family: "Playfair Display", Georgia, serif;
+            color: #9a6200;
+            font-size: clamp(2rem, 6vw, 3.3rem);
+            margin-bottom: 30px;
+        }
+
+        .letter p {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.05rem, 3vw, 1.3rem);
+            line-height: 2;
+            color: var(--ink-soft);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .8s ease, transform .8s ease;
+        }
+
+        .letter.visible p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .letter.visible p:nth-of-type(1) { transition-delay: .1s; }
+        .letter.visible p:nth-of-type(2) { transition-delay: .35s; }
+        .letter.visible p:nth-of-type(3) { transition-delay: .6s; }
+        .letter.visible p:nth-of-type(4) { transition-delay: .85s; }
+        .letter.visible p:nth-of-type(5) { transition-delay: 1.1s; }
+
+        .signature {
+            margin-top: 35px;
+            font-family: "Dancing Script", cursive;
+            font-size: 2.4rem;
+            color: #d18a00;
+        }
+
+        /* ================================
+           FRASE ESPECIAL
+        ================================= */
+
+        .quote-section {
+            text-align: center;
+        }
+
+        .quote {
+            max-width: 850px;
+            margin: auto;
+            font-family: "Playfair Display", Georgia, serif;
+            font-style: italic;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            line-height: 1.5;
+            position: relative;
+            background: linear-gradient(100deg, #805100, #f4bd00, #805100);
+            background-size: 250% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: titleShine 5s linear infinite;
+        }
+
+        .quote::before, .quote::after {
+            font-size: 5rem;
+            color: #f4bd00;
+            opacity: .5;
+            -webkit-text-fill-color: #f4bd00;
+        }
+
+        .quote::before { content: "\201C"; }
+        .quote::after { content: "\201D"; }
+
+        /* ================================
+           BOTÓN MÚSICA
+        ================================= */
+
+        .music-control {
+            position: fixed;
+            right: 20px;
+            bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+            z-index: 500;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,.8);
+            background: rgba(245,170,0,.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(100,60,0,.25);
+            transition: transform .3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+        }
+
+        .music-control:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .music-control.playing {
+            animation: musicPulse 1.2s infinite;
+        }
+
+        @keyframes musicPulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(100,60,0,.25); }
+            50% { box-shadow: 0 10px 30px rgba(100,60,0,.25), 0 0 0 12px rgba(255,193,7,.15); }
+        }
+
+        .eq-bar {
+            display: inline-block;
+            width: 3px;
+            background: white;
+            border-radius: 2px;
+            height: 10px;
+            animation: eqBounce 1s ease-in-out infinite;
+        }
+
+        .eq-bar:nth-child(2) { animation-delay: .15s; }
+        .eq-bar:nth-child(3) { animation-delay: .3s; }
+
+        @keyframes eqBounce {
+            0%, 100% { height: 8px; }
+            50% { height: 20px; }
+        }
+
+        /* ================================
+           FINAL
+        ================================= */
+
+        .final-section {
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .final-content {
+            max-width: 800px;
+        }
+
+        .final-flower {
+            font-size: 110px;
+            animation: flowerPulse 2s infinite, flowerRotate 5s infinite;
+        }
+
+        .final-content h2 {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: #c78300;
+            margin: 20px 0;
+            text-shadow: 0 4px 20px rgba(255,255,255,.8);
+        }
+
+        .final-content p {
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            line-height: 1.9;
+            color: var(--ink-soft);
+        }
+
+        .final-message {
+            margin-top: 30px;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #9b6200;
+        }
+
+        .final-emojis {
+            font-size: 2.5rem;
+            margin-top: 25px;
+            letter-spacing: 6px;
+        }
+
+        .final-emojis span {
+            display: inline-block;
+            animation: bounceEmoji 1.6s ease-in-out infinite;
+        }
+
+        .final-emojis span:nth-child(2) { animation-delay: .15s; }
+        .final-emojis span:nth-child(3) { animation-delay: .3s; }
+        .final-emojis span:nth-child(4) { animation-delay: .45s; }
+        .final-emojis span:nth-child(5) { animation-delay: .6s; }
+
+        @keyframes bounceEmoji {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-14px) rotate(8deg); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px calc(50px + env(safe-area-inset-bottom, 0px));
+            color: #896000;
+        }
+
+        footer span {
+            font-size: 1.5rem;
+            display: inline-block;
+            animation: flowerRotate 4s ease-in-out infinite;
+        }
+
+        /* ================================
+           ANIMACIONES SCROLL
+        ================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cards.reveal-group .card {
+            opacity: 0;
+            transform: translateY(50px) scale(.95);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .cards.reveal-group.visible .card:nth-child(1) { transition-delay: .05s; }
+        .cards.reveal-group.visible .card:nth-child(2) { transition-delay: .2s; }
+        .cards.reveal-group.visible .card:nth-child(3) { transition-delay: .35s; }
+
+        .cards.reveal-group.visible .card {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* ================================
+           RESPONSIVE
+        ================================= */
+
+        @media (max-width: 800px) {
+            .cards { grid-template-columns: 1fr; max-width: 500px; }
+            .letter { padding: 50px 25px; }
+            section { padding: 75px 15px; }
+            .flower-field { gap: 5px; }
+            .big-flower { font-size: 45px !important; }
+            .hero { min-height: 90vh; min-height: 90dvh; }
+        }
+
+        @media (max-width: 500px) {
+            .intro-card { padding: 35px 20px; }
+            .intro-flower { font-size: 70px; }
+            .hero { padding: 60px 18px; }
+            .hero h1 { font-size: 4rem; }
+            .hero h2 { font-size: 1.5rem; }
+            .hero-description { font-size: 1rem; line-height: 1.7; }
+            .small-text { font-size: .85rem; letter-spacing: 3px; }
+            .card { padding: 30px 20px; }
+            .letter { padding: 45px 20px; }
+            .letter::before { font-size: 50px; top: -28px; }
+            .signature { font-size: 2rem; }
+            .quote { font-size: 1.7rem; }
+            .quote::before, .quote::after { font-size: 3rem; }
+            .final-flower { font-size: 80px; }
+            .final-content h2 { margin: 12px 0; }
+            .music-control { width: 52px; height: 52px; right: 14px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); font-size: 19px; }
+            .cursor-glow { display: none; }
+            section { padding: 60px 15px; }
+            .section-title { margin-bottom: 40px; }
+        }
+
+        @media (max-width: 360px) {
+            .hero h1 { font-size: 3.1rem; }
+            .hero h2 { font-size: 1.25rem; }
+            .intro-card h1 { font-size: 1.8rem; }
+            .intro-card p { font-size: 1rem; }
+            .enter-btn { padding: 14px 26px; font-size: .95rem; }
+            .letter { padding: 38px 16px; }
+            .card { padding: 26px 16px; }
+            .final-content h2 { font-size: 2.3rem; }
+            .final-emojis { font-size: 1.8rem; letter-spacing: 3px; }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .card { transform: none !important; }
+            .card:hover::after { background-position: -120% -120%; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: .001ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==========================================
+         AUDIO
+    =========================================== -->
+
+    <audio id="music" loop preload="auto">
+        <source src="mentira.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ==========================================
+         BARRA DE PROGRESO
+    =========================================== -->
+
+    <div id="progress-bar"></div>
+
+    <!-- ==========================================
+         FONDO
+    =========================================== -->
+
+    <div class="background">
+        <div class="stars"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- ==========================================
+         PANTALLA DE INICIO
+    =========================================== -->
+
+    <div id="intro">
+
+        <div class="intro-card">
+
+            <div class="intro-ring"></div>
+            <div class="intro-ring"></div>
+            <div class="intro-ring"></div>
+
+            <span class="intro-flower">🌻</span>
+
+            <h1>Para Mary 💛</h1>
+
+            <p>
+                Hay regalos que duran un día...
+                y hay sentimientos que florecen
+                para siempre. 🌻
+            </p>
+
+            <button class="enter-btn" onclick="enterPage()">
+                🌻 Abrir mi sorpresa 💛
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         EFECTOS
+    =========================================== -->
+
+    <div id="petals"></div>
+    <div id="hearts"></div>
+    <div id="sparkles"></div>
+    <div id="confetti"></div>
+
+    <!-- ==========================================
+         CONTENIDO
+    =========================================== -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero" id="heroSection">
+
+            <div class="hero-content">
+
+                <div class="small-text">
+                    Para la persona que hace florecer mi mundo
+                </div>
+
+                <h1>Mary 🌻</h1>
+
+                <h2>Hoy todas las flores amarillas son para ti 💛</h2>
+
+                <p class="hero-description" id="typedText"></p>
+
+                <div class="scroll-down">
+                    🌻<br>
+                    ↓
+                </div>
+
+            </div>
+
+            <div class="flower-field" id="flowerField">
+                <div class="big-flower">🌻</div>
+                <div class="big-flower">🌻</div>
+                <div class="big-flower">🌻</div>
+                <div class="big-flower">🌻</div>
+                <div class="big-flower">🌻</div>
+            </div>
+
+        </section>
+
+
+        <!-- MENSAJES -->
+
+        <section>
+
+            <h2 class="section-title reveal">
+                <span>Un pequeño detalle</span>
+                Cosas que quiero decirte 💛
+            </h2>
+
+            <div class="cards reveal-group">
+
+                <div class="card">
+                    <span class="card-icon">🌻</span>
+                    <h3>Mi flor favorita</h3>
+                    <p>
+                        No es solamente amarilla.
+                        Es brillante, cálida y llena de vida.
+                        Un poquito como tú, Mary. 💛
+                    </p>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">☀️</span>
+                    <h3>Mi luz</h3>
+                    <p>
+                        Hay días grises que cambian completamente
+                        cuando apareces tú con una sonrisa.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">💛</span>
+                    <h3>Mi elección</h3>
+                    <p>
+                        Entre millones de personas,
+                        mi corazón encontró a alguien
+                        que quiere cuidar y hacer feliz.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CARTA -->
+
+        <section class="love-section">
+
+            <div class="letter reveal">
+
+                <h2>Para ti, Mary 🌻</h2>
+
+                <p>
+                    Hoy quiero regalarte flores amarillas,
+                    pero también quiero regalarte unas palabras
+                    que salgan directamente de mi corazón.
+                </p>
+
+                <p>
+                    Si pudiera llenar un jardín con todo lo que siento
+                    por ti, probablemente no alcanzaría ningún campo
+                    para guardar tantas flores.
+                </p>
+
+                <p>
+                    Porque tú no eres solamente alguien especial...
+                    eres esa persona que consigue que los días normales
+                    tengan algo bonito.
+                </p>
+
+                <p>
+                    Quiero que cada vez que veas una flor amarilla
+                    recuerdes que en algún lugar existe alguien
+                    que piensa en ti y sonríe. 💛
+                </p>
+
+                <p>
+                    Y si alguna vez dudas de lo importante que eres,
+                    vuelve a leer esto:
+                    <strong>eres una de las cosas más bonitas
+                    que me ha regalado la vida.</strong>
+                </p>
+
+                <div class="signature">
+                    Con todo mi cariño... 💛
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FRASE -->
+
+        <section class="quote-section">
+
+            <h2 class="section-title reveal">
+                <span>Una frase para ti</span>
+                🌻
+            </h2>
+
+            <div class="quote reveal">
+                Que nunca te falten motivos para sonreír,
+                sueños que perseguir,
+                personas que te quieran...
+                y flores amarillas que te recuerden
+                lo especial que eres.
+            </div>
+
+        </section>
+
+
+        <!-- SEGUNDA PARTE -->
+
+        <section>
+
+            <h2 class="section-title reveal">
+                <span>Porque tú...</span>
+                Haces florecer mi mundo 🌻
+            </h2>
+
+            <div class="cards reveal-group">
+
+                <div class="card">
+                    <span class="card-icon">✨</span>
+                    <h3>Haces especial lo sencillo</h3>
+                    <p>
+                        Una conversación, una mirada,
+                        una sonrisa... contigo hasta
+                        las cosas pequeñas tienen magia.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">🌅</span>
+                    <h3>Eres mi luz</h3>
+                    <p>
+                        Como el girasol busca el sol,
+                        yo encuentro una razón para sonreír
+                        cuando pienso en ti.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <span class="card-icon">💐</span>
+                    <h3>Te mereces un jardín</h3>
+                    <p>
+                        Porque una sola flor amarilla
+                        se queda pequeña para representar
+                        todo lo bonito que deseo para ti.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FINAL -->
+
+        <section class="final-section" id="finalSection">
+
+            <div class="final-content reveal">
+
+                <div class="final-flower">
+                    🌻
+                </div>
+
+                <h2>Para Mary 💛</h2>
+
+                <p>
+                    Que estas flores amarillas sean solamente
+                    un pequeño recordatorio de todo lo bonito
+                    que deseo que florezca en tu vida.
+                </p>
+
+                <p class="final-message">
+                    Y si pudiera pedir un deseo hoy...
+                    pediría seguir creando momentos bonitos
+                    contigo. 🌻✨
+                </p>
+
+                <div class="final-emojis">
+                    <span>🌻</span><span>💛</span><span>🌻</span><span>💛</span><span>🌻</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================================
+         CONTROL DE MÚSICA
+    =========================================== -->
+
+    <button
+        id="musicButton"
+        class="music-control"
+        onclick="toggleMusic()"
+        aria-label="Controlar música">
+        🎵
+    </button>
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+        <span>🌻</span>
+        <p>Hecho con cariño especialmente para Mary 💛</p>
+        <p>Porque algunas personas son como flores: hacen más bonito todo lo que las rodea.</p>
+    </footer>
+
+
+    <script>
+
+        /* ==========================================
+           VARIABLES
+        =========================================== */
+
+        const music = document.getElementById("music");
+        const intro = document.getElementById("intro");
+        const musicButton = document.getElementById("musicButton");
+
+        let musicPlaying = false;
+        let petalsTimer = null;
+        let heartsTimer = null;
+
+        /* ==========================================
+           ENTRAR A LA PÁGINA
+        =========================================== */
+
+        function enterPage() {
+            intro.classList.add("hidden");
+            music.volume = 0.55;
+
+            music.play()
+                .then(() => {
+                    musicPlaying = true;
+                    setMusicUI(true);
+                })
+                .catch(() => { musicPlaying = false; });
+
+            startHearts();
+            typeHeroText();
+        }
+
+        /* ==========================================
+           INTENTAR AUTOPLAY AL ABRIR
+        =========================================== */
+
+        window.addEventListener("load", () => {
+            music.volume = 0.55;
+
+            music.play()
+                .then(() => {
+                    musicPlaying = true;
+                    setMusicUI(true);
+                })
+                .catch(() => {
+                    /* Algunos navegadores bloquean el autoplay con sonido.
+                       El botón "Abrir mi sorpresa" lo iniciará. */
+                    musicPlaying = false;
+                });
+
+            startPetals();
+            createSparkles();
+        });
+
+        /* ==========================================
+           CONTROL DE MÚSICA (con ecualizador visual)
+        =========================================== */
+
+        function setMusicUI(playing) {
+            musicButton.classList.toggle("playing", playing);
+            musicButton.innerHTML = playing
+                ? '<span class="eq-bar"></span><span class="eq-bar"></span><span class="eq-bar"></span>'
+                : "🔇";
+        }
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play()
+                    .then(() => {
+                        musicPlaying = true;
+                        setMusicUI(true);
+                    })
+                    .catch(() => {});
+            } else {
+                music.pause();
+                musicPlaying = false;
+                setMusicUI(false);
+            }
+        }
+
+        /* ==========================================
+           TEXTO CON EFECTO DE ESCRITURA
+        =========================================== */
+
+        function typeHeroText() {
+            const el = document.getElementById("typedText");
+            if (!el || el.dataset.typed) return;
+            el.dataset.typed = "true";
+
+            const text = "Porque si tuviera que elegir una flor para representar " +
+                "lo que siento por ti, elegiría una que siempre busque " +
+                "la luz... como yo siempre busco tu sonrisa. ✨";
+
+            let i = 0;
+            const cursor = document.createElement("span");
+            cursor.className = "typed-cursor";
+            cursor.textContent = "\u00A0";
+
+            function tick() {
+                if (i <= text.length) {
+                    el.textContent = text.slice(0, i);
+                    el.appendChild(cursor);
+                    i += 2;
+                    setTimeout(tick, 18);
+                } else {
+                    cursor.remove();
+                }
+            }
+            tick();
+        }
+
+        /* ==========================================
+           PÉTALOS
+        =========================================== */
+
+        function createPetal() {
+            const petal = document.createElement("div");
+            petal.className = "petal";
+
+            const flowers = ["🌻", "🌼", "💛", "🌻", "🌼"];
+            petal.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+
+            petal.style.left = Math.random() * 100 + "vw";
+            petal.style.fontSize = (15 + Math.random() * 20) + "px";
+            petal.style.animationDuration = (6 + Math.random() * 7) + "s";
+            petal.style.animationDelay = Math.random() * 2 + "s";
+            petal.style.setProperty("--drift", (40 + Math.random() * 100) + "px");
+
+            document.getElementById("petals").appendChild(petal);
+            setTimeout(() => petal.remove(), 15000);
+        }
+
+        function startPetals() {
+            if (petalsTimer) return;
+            petalsTimer = setInterval(createPetal, 450);
+        }
+
+        /* ==========================================
+           CORAZONES
+        =========================================== */
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+
+            const hearts = ["💛", "💛", "💖", "💕", "🌻"];
+            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (12 + Math.random() * 20) + "px";
+            heart.style.animationDuration = (7 + Math.random() * 8) + "s";
+            heart.style.setProperty("--move", (Math.random() * 200 - 100) + "px");
+
+            document.getElementById("hearts").appendChild(heart);
+            setTimeout(() => heart.remove(), 16000);
+        }
+
+        function startHearts() {
+            if (heartsTimer) return;
+            heartsTimer = setInterval(createHeart, 900);
+        }
+
+        /* ==========================================
+           DESTELLOS
+        =========================================== */
+
+        function createSparkles() {
+            const container = document.getElementById("sparkles");
+            for (let i = 0; i < 45; i++) {
+                const sparkle = document.createElement("div");
+                sparkle.className = "sparkle";
+                sparkle.style.left = Math.random() * 100 + "%";
+                sparkle.style.top = Math.random() * 100 + "%";
+                sparkle.style.animationDelay = Math.random() * 3 + "s";
+                sparkle.style.animationDuration = (1.5 + Math.random() * 2) + "s";
+                container.appendChild(sparkle);
+            }
+        }
+
+        /* ==========================================
+           CONFETI FINAL
+        =========================================== */
+
+        let confettiFired = false;
+
+        function fireConfetti() {
+            if (confettiFired) return;
+            confettiFired = true;
+
+            const container = document.getElementById("confetti");
+            const items = ["🌻", "💛", "🌼", "✨"];
+
+            for (let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const piece = document.createElement("div");
+                    piece.className = "confetti-piece";
+                    piece.textContent = items[Math.floor(Math.random() * items.length)];
+                    piece.style.left = Math.random() * 100 + "vw";
+                    piece.style.fontSize = (14 + Math.random() * 18) + "px";
+                    piece.style.setProperty("--cx", (Math.random() * 200 - 100) + "px");
+                    piece.style.animationDuration = (2.5 + Math.random() * 2) + "s";
+                    container.appendChild(piece);
+                    setTimeout(() => piece.remove(), 5200);
+                }, i * 35);
+            }
+        }
+
+        /* ==========================================
+           ANIMACIÓN AL HACER SCROLL
+        =========================================== */
+
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            },
+            { threshold: 0.15 }
+        );
+
+        document.querySelectorAll(".reveal, .reveal-group").forEach(element => {
+            observer.observe(element);
+        });
+
+        const finalObserver = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) fireConfetti();
+                });
+            },
+            { threshold: 0.4 }
+        );
+        const finalSection = document.getElementById("finalSection");
+        if (finalSection) finalObserver.observe(finalSection);
+
+        /* ==========================================
+           BARRA DE PROGRESO DE SCROLL
+        =========================================== */
+
+        function updateProgressBar() {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            document.getElementById("progress-bar").style.width = pct + "%";
+        }
+
+        window.addEventListener("scroll", updateProgressBar, { passive: true });
+        updateProgressBar();
+
+        /* ==========================================
+           PARALLAX SUAVE EN EL CAMPO DE FLORES
+        =========================================== */
+
+        window.addEventListener("scroll", () => {
+            const field = document.getElementById("flowerField");
+            if (field) {
+                const offset = Math.min(window.scrollY * 0.15, 60);
+                field.style.transform = `translateY(${offset}px)`;
+            }
+        }, { passive: true });
+
+        /* ==========================================
+           BRILLO QUE SIGUE AL CURSOR
+        =========================================== */
+
+        const cursorGlow = document.getElementById("cursorGlow");
+        let glowVisible = false;
+
+        window.addEventListener("pointermove", (e) => {
+            if (e.pointerType === "touch") return;
+            cursorGlow.style.left = e.clientX + "px";
+            cursorGlow.style.top = e.clientY + "px";
+            if (!glowVisible) {
+                cursorGlow.style.opacity = "1";
+                glowVisible = true;
+            }
+        });
+
+        window.addEventListener("pointerleave", () => {
+            cursorGlow.style.opacity = "0";
+            glowVisible = false;
+        });
+
+        /* ==========================================
+           INCLINACIÓN 3D SUAVE EN LAS TARJETAS
+        =========================================== */
+
+        document.querySelectorAll(".card").forEach(card => {
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform =
+                    `translateY(-10px) rotateX(${(-y * 8).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg)`;
+            });
+
+            card.addEventListener("mouseleave", () => {
+                card.style.transform = "translateY(0) rotateX(0) rotateY(0)";
+            });
+        });
+
+        /* ==========================================
+           EFECTO EXTRA AL HACER CLICK
+        =========================================== */
+
+        document.addEventListener("click", function (event) {
+            for (let i = 0; i < 8; i++) {
+                const heart = document.createElement("div");
+                heart.textContent = Math.random() > .5 ? "💛" : "🌻";
+                heart.style.position = "fixed";
+                heart.style.left = event.clientX + "px";
+                heart.style.top = event.clientY + "px";
+                heart.style.pointerEvents = "none";
+                heart.style.zIndex = "99999";
+                heart.style.fontSize = (15 + Math.random() * 20) + "px";
+                heart.style.transition = "all 1.2s ease";
+                document.body.appendChild(heart);
+
+                const x = (Math.random() - .5) * 180;
+                const y = -80 - Math.random() * 120;
+
+                requestAnimationFrame(() => {
+                    heart.style.transform = `translate(${x}px, ${y}px) scale(1.4) rotate(${(Math.random()*360)|0}deg)`;
+                    heart.style.opacity = "0";
+                });
+
+                setTimeout(() => heart.remove(), 1300);
+            }
+        });
+
+        /* ==========================================
+           EFECTO DE TECLADO
+        =========================================== */
+
+        document.addEventListener("keydown", function (event) {
+            if (event.code === "Space") {
+                event.preventDefault();
+                toggleMusic();
+            }
+        });
+
+    </script>
+
+</body>
+</html>
